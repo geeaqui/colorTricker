@@ -106,6 +106,7 @@ header h1{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:24px;
 	opacity:.7;
+	bottom: -145px;
 }
 
 /**************** Game Page *************/
@@ -134,7 +135,7 @@ header h1{
 
 #back{
 	position: relative;
-	top:-55px;
+	top:-235px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:24px;
 	opacity:.7;
@@ -146,6 +147,9 @@ header h1{
 	border:1px solid black;
 	position: relative;
 	top:100px;
+	z-index: 1;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #colors{
