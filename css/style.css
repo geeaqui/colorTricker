@@ -157,6 +157,16 @@ header h1{
 	position: relative;
 	top:-202px;
 }
+
+#gameFooter{
+	display: inline-block;
+}
+
+#gameFooter p{
+	position: relative;
+	display: inline-block;
+	top:-235px;
+}
 /************** Footer *******************/
 #foot{
 	width:100%;
