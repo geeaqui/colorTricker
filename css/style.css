@@ -116,7 +116,7 @@ header h1{
 }
 
 #gamePage{
-	position: relative;
+	position: absolute;
 	//top:-65px;
 	display: none;
 }
@@ -151,6 +151,7 @@ header h1{
 	z-index: 1;
 	margin-left: auto;
 	margin-right: auto;
+
 }
 
 #colors{
@@ -166,6 +167,7 @@ header h1{
 	position: relative;
 	display: inline-block;
 	top:-235px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /************** Footer *******************/
 #foot{
