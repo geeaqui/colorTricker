@@ -59,7 +59,8 @@ $(function(){
 			score +=100;
 			console.log(score);
 		}else{
-			console.log("Game Over!");
+			alert("Game Over!");
+			answer.style.display = "none";
 		}
 
 	}
