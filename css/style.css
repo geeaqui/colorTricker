@@ -116,8 +116,8 @@ header h1{
 }
 
 #gamePage{
-	position: absolute;
-	//top:-65px;
+	position: relative;
+	top:202px;
 	display: none;
 }
 #orange, #red{
@@ -146,11 +146,16 @@ header h1{
 	width:300px;
 	height: 200px;
 	border:1px solid black;
-	position: relative;
+	//position: relative;
+	position: absolute;
 	top:100px;
 	z-index: 1;
 	margin-left: auto;
 	margin-right: auto;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
 
 }
 
