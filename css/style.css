@@ -1,0 +1,136 @@
+body{
+	box-sizing: border-box;
+	//background:url("../images/color.png");
+	background-repeat: repeat;
+}
+
+#wrapper{
+	width:100vw;
+	height:100vh;
+}
+
+header{
+	width:100%;
+	background-color:#1c3f77;
+}
+
+header h1{
+	font-size: 48px;
+	color:#fff;
+	padding:20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#gameArea{
+	width:900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/********* Front Page*************/
+#front{
+	position: absolute;
+	width:900px;
+	height:500px;
+	background-color: #fff;
+	top:88px;
+	z-index: 1;
+	-webkit-box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+	background:url("../images/color.png");
+}
+
+.buttonArea{
+	width:500px;
+	margin-left: auto;	
+	margin-right: auto;
+}
+
+#startBtn{
+	margin-top: 100px;
+}
+
+.myButton{
+	width:300px;
+	margin-left:100px;
+	padding:30px;
+	margin-top: 20px;
+	font-size: 36px;
+	text-transform: uppercase;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #42ffbc;
+	color:#fff;
+}
+
+/*********** Instruction Page ***********/
+#instrucPage{
+	background-color: #b5ffe5;
+	position: relative;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:900px;
+	height: 500px;
+	display: none;
+}
+
+#instrucPage h2{
+	font-size: 48px;
+	padding-top: 20px;
+}
+
+#instrucPage h3{
+	font-size:24px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#instrucPage p{
+	text-align: center;
+	padding-top: 50px;
+}
+
+#instrucPage ul li{
+	display:block;
+}
+
+#mainMenu{
+	position: relative;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:24px;
+	opacity:.7;
+}
+
+/**************** Game Page *************/
+#gameArea ul li{
+	float:left;
+}
+
+#gamePage{
+	position: relative;
+	//top:-65px;
+	display: none;
+}
+#orange, #red{
+	width:450px;
+	height:500px;
+	margin:0;
+}
+
+#orange{
+	background-color:#ff961e;
+}
+
+#red{
+	background-color:red;
+}
+
+#back{
+	position: relative;
+	top:-55px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:24px;
+	opacity:.7;
+}
+
+
+
