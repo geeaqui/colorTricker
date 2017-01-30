@@ -28,11 +28,13 @@ var score = 0;
 
 //key event listener
 
-function listenForKeyPress(){
+function listenForKeyPress(ans){
 		document.addEventListener("keydown", function(event){
 			if(event.keyCode === 37){
+				ans = "orange";
 				console.log("Left");
 			}else if(event.keyCode === 39){
+				ans = "red";
 				console.log("Right");
 			}
 			//console.log(event.keyCode);
@@ -48,7 +50,15 @@ function getColor(){
 			answer.style.background = "red";
 			console.log("I am red");
 		}
+		return colors;
 }
+
+// function compareAnwer(){
+// 	if(){
+
+// 	}
+// }
+
 
 
 
