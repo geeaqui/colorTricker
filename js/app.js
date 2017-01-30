@@ -12,5 +12,9 @@ $(function(){
 	$('#intBtn').click(function(){
 		$('#front, #instrucPage').slideToggle();
 	});
+
+	$('#mainMenu').click(function(){
+		$('#front, #instrucPage').slideToggle();
+	});
 //key event listener
 });

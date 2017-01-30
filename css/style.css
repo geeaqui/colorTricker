@@ -76,6 +76,9 @@ header h1{
 #instrucPage h2{
 	font-size: 48px;
 	padding-top: 20px;
+	text-align: center;
+	letter-spacing: 10px;
+	border-bottom: 2px solid #fff;
 }
 
 #instrucPage h3{
@@ -91,6 +94,11 @@ header h1{
 
 #instrucPage ul li{
 	display:block;
+}
+
+#takeNote{
+	font-weight: bold;
+	font-size:24px;
 }
 
 #mainMenu{
@@ -132,5 +140,23 @@ header h1{
 	opacity:.7;
 }
 
+#answer{
+	width:300px;
+	height: 200px;
+	border:1px solid black;
+	position: relative;
+	top:100px;
+}
 
+#colors{
+	position: relative;
+	top:-202px;
+}
+/************** Footer *******************/
+#foot{
+	width:100%;
+	height:200px;
+	background-color: #36374f;
+	margin-top: -200px;
+}
 
