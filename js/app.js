@@ -1,22 +1,22 @@
 $(function(){
 
-var answer = document.getElementById('answer');
-var colors = ["orange", "red"];
-var score = 0;
-//start button
+	var answer = document.getElementById('answer');
+	var colors = ["orange", "red"];
+	var ans = "";
+	var score = 0;
+
+	//start button
 	$('#startBtn').on('click', function(){
 		$('#front, #gamePage').slideToggle();
-		listenForKeyPress();
-		getColor();
+		myFunction();
 	});
-
 
 	$('#back').click(function(){
 		$('#front, #gamePage').slideToggle();
 	});
 
 
-//instruction button
+	//instruction button
 	$('#intBtn').click(function(){
 		$('#front, #instrucPage').slideToggle();
 	});
@@ -26,40 +26,46 @@ var score = 0;
 	});
 
 
-//key event listener
+	//key event listener
 
-function listenForKeyPress(ans){
-		document.addEventListener("keydown", function(event){
+	function listenForKeyPress(){
+		var color = getColor();
+		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
-				ans = "orange";
-				console.log("Left");
+			ans = "orange";
 			}else if(event.keyCode === 39){
 				ans = "red";
-				console.log("Right");
+				//console.log("Right");
 			}
-			//console.log(event.keyCode);
+			compareAnswer(ans, color);
 		});
 	}
 
-function getColor(){
-	var rand = Math.floor(Math.random()*colors.length);
-		if(colors[rand] === "orange"){
-			answer.style.background = "orange";
-			console.log("I am orange");
-		}else if(colors[rand] === "red"){
-			answer.style.background = "red";
-			console.log("I am red");
+	function getColor(){
+		var rand = Math.floor(Math.random()*colors.length);
+			if(colors[rand] === "orange"){
+				answer.style.background = "orange";
+				return "orange";
+			}else if(colors[rand] === "red"){
+				answer.style.background = "red";
+			return "red";
 		}
-		return colors;
-}
+	}
 
-// function compareAnwer(){
-// 	if(){
+	function compareAnswer(ans, color){
+		console.log(ans,color);
+		if(ans === color){
+			console.log("You are right");
+			score +=100;
+			console.log(score);
+		}else{
+			console.log("Game Over!");
+		}
 
-// 	}
-// }
+	}
 
-
-
+	function myFunction() {
+    	myVar = setInterval(listenForKeyPress, 3000);
+	}
 
 });
