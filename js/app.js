@@ -9,9 +9,8 @@ $(function(){
 	//start button
 	$('#startBtn').on('click', function(){
 		$('#front, #gamePage').slideToggle();
-		//myFunction();
-		playGame();
-
+		
+			myFunction();
 	});
 
 	$('#back').click(function(){
@@ -48,15 +47,11 @@ $(function(){
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "orange"){
 				//answer.style.background = "orange";
-				$(answer).css('background-color','orange').fadeIn(500, function(){
-					$(this).fadeOut(1000);
-				});
+				$(answer).css('background-color','orange');
 				return "orange";
 			}else if(colors[rand] === "red"){
 				//answer.style.background = "red";
-				$(answer).css('background-color','red').fadeIn(500,function(){
-					$(this).fadeOut(1000);
-				});
+				$(answer).css('background-color','red');
 			return "red";
 		}
 	}
@@ -75,19 +70,17 @@ $(function(){
 			//answer.style.display = "none";
 			$(answer).css('display','none');
 			alert("game over");
+			status = false;
 		}
 
 	}
 
-	var playGame = function(){
-		do{
-			myVar = setInterval(listenForKeyPress, 3000);
-		}while(status);
-	}
 	//set game speed
-	// function myFunction() {
-	// 	myVar = setInterval(listenForKeyPress, 3000);
-	// }
+	function myFunction() {
+		myVar = setInterval(listenForKeyPress, 3000);
+	}
+
+	//add set timeout if there is no answer
 });
 
 
