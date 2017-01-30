@@ -4,11 +4,14 @@ $(function(){
 	var colors = ["orange", "red"];
 	var ans = "";
 	var score = 0;
+	var status = true;
 
 	//start button
 	$('#startBtn').on('click', function(){
 		$('#front, #gamePage').slideToggle();
-		myFunction();
+		//myFunction();
+		playGame();
+
 	});
 
 	$('#back').click(function(){
@@ -45,13 +48,13 @@ $(function(){
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "orange"){
 				//answer.style.background = "orange";
-				$(answer).css('background-color','orange').fadeIn(1000, function(){
+				$(answer).css('background-color','orange').fadeIn(500, function(){
 					$(this).fadeOut(1000);
 				});
 				return "orange";
 			}else if(colors[rand] === "red"){
 				//answer.style.background = "red";
-				$(answer).css('background-color','red').fadeIn(1000,function(){
+				$(answer).css('background-color','red').fadeIn(500,function(){
 					$(this).fadeOut(1000);
 				});
 			return "red";
@@ -66,16 +69,32 @@ $(function(){
 			console.log("You are right");
 			score +=100;
 			spanScore.innerHTML = score;
+			status =true;
 		}else{
-			alert("Game Over!");
-			answer.style.display = "none";
+			console.log("Game over");
+			//answer.style.display = "none";
+			$(answer).css('display','none');
+			alert("game over");
 		}
 
 	}
 
-	//set game speed
-	function myFunction() {
-    	myVar = setInterval(listenForKeyPress, 3000);
+	var playGame = function(){
+		do{
+			myVar = setInterval(listenForKeyPress, 3000);
+		}while(status);
 	}
-
+	//set game speed
+	// function myFunction() {
+	// 	myVar = setInterval(listenForKeyPress, 3000);
+	// }
 });
+
+
+
+
+
+
+
+
+
