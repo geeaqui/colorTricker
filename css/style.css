@@ -114,6 +114,16 @@ header h1{
 }
 
 /**************** Game Page *************/
+
+#timer{
+	height:30px;
+	width:900px;
+	background-color: black;
+	position :relative;
+	top:-202px;
+	z-index: 9;
+}
+
 #gameArea ul li{
 	float:left;
 }

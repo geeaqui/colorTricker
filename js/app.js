@@ -103,6 +103,20 @@ $(function(){
   		}
 	}
 
+	function colorTimer() {  
+		var timer = document.getElementById('timer');
+  		var width = 0;
+  		var id = setInterval(change, 30);
+  		function change() {
+    		if (width == 100) {
+      			clearInterval(id);
+    		} else {
+      			width++; 
+      			timer.style.width = width + '%'; 
+    		}
+  		}
+	}
+
 	//add set timeout if there is no answer
 	var start = function() {
   		clockEnd = setInterval(countdown, 1000);
