@@ -10,6 +10,7 @@ $(function(){
 	var colorInterval;
 	var easy = 3;
 	var clockEnd;
+	var colorId;
 
 	//start button
 	$('#startBtn').on('click', function(){
@@ -41,10 +42,12 @@ $(function(){
 		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
 				ans = "orange";
+				stopColor();
 				stopTimer();
 				//easy = 3;
 			}else if(event.keyCode === 39){
 				ans = "red";
+				stopColor();
 				stopTimer();
 				//easy = 3;
 			}
@@ -84,7 +87,7 @@ $(function(){
 			console.log(easy);
 			console.log("You are right");
 			score +=100;
-			easy = 3;
+			easy =3
 			spanScore.innerHTML = score;
 			listenForKeyPress();
 			//removeInterval();
@@ -109,10 +112,10 @@ $(function(){
 	function colorTimer() {  
 		var timer = document.getElementById('timer');
   		var width = 0;
-  		var id = setInterval(change, 30);
+  		colorId = setInterval(change, 30);
   		function change() {
     		if (width == 100) {
-      			clearInterval(id);
+      			clearInterval(colorId );
     		} else {
       			width++; 
       			timer.style.width = width + '%'; 
@@ -136,6 +139,9 @@ $(function(){
     	clearInterval(clockEnd);
 	}
 
+	function stopColor() {
+    	clearInterval(colorId);
+	}
 	function hardMode(){
 		textAns.innerHTML = "";
 		if(score >= 1500){
