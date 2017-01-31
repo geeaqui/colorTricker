@@ -10,15 +10,13 @@ $(function(){
 	var colorInterval;
 	var easy = 3;
 	var hard = 2;
-	var clockStart = 10;
 	var clockEnd;
 
 	//start button
 	$('#startBtn').on('click', function(){
-		$('#front, #gamePage').slideToggle();
-		
-			//myFunction();
-			listenForKeyPress();
+		$('#front, #gamePage').slideToggle();	
+      	listenForKeyPress();
+			//listenForKeyPress();
 	});
 
 	$('#back').click(function(){
@@ -45,9 +43,11 @@ $(function(){
 			if(event.keyCode === 37){
 				ans = "orange";
 				stopTimer();
+				easy = 3;
 			}else if(event.keyCode === 39){
 				ans = "red";
-				stopTimer()
+				stopTimer();
+				easy = 3;
 			}
 			textAns.innerHTML = colorText[rand];
 			compareAnswer(ans, color);
@@ -60,6 +60,7 @@ $(function(){
 
 	//Generate random color between orange and red
 	function getColor(){
+		start();
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "orange"){
 				$(answer).css('background-color','orange');
@@ -135,7 +136,7 @@ var countdown = function() {
     	easy = easy - 1;
     	console.log(easy);
     	if(easy === 0){
-    		console.log(easy);
+    		alert("game over!");
     	}
       }
 }
@@ -143,12 +144,6 @@ var countdown = function() {
 function stopTimer() {
     clearInterval(clockEnd);
 }
-
-start();
-
-
-
-
 
 
 
