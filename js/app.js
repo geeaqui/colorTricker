@@ -72,11 +72,12 @@ $(function(){
 			$(answer).css('display','none');
 			alert("game over");
 			status = false;
+			timer();
 		}
 
 	}
 
-
+	//animating the background color of div id="answer"
 	function move() {  
   		var width = 0;
   		var id = setInterval(frame, 10);
@@ -88,6 +89,10 @@ $(function(){
       		answer.style.width = width + '%'; 
     		}
   		}
+	}
+
+	function timer(){
+			clearInterval(myVar);
 	}
 
 	//set game speed
