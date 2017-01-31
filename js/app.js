@@ -43,11 +43,11 @@ $(function(){
 			if(event.keyCode === 37){
 				ans = "orange";
 				stopTimer();
-				//easy = 3;
+				easy = 3;
 			}else if(event.keyCode === 39){
 				ans = "red";
 				stopTimer();
-				//easy = 3;
+				easy = 3;
 			}
 			//textAns.innerHTML = colorText[rand];
 			hardMode();
@@ -57,24 +57,24 @@ $(function(){
 
 	//Generate random color between orange and red
 	function getColor(){
-		//start();
+		start();
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "orange"){
 				$(answer).css('background-color','orange');
 				move();
-				colorTimer();
+				//colorTimer();
 				return "orange";
 			}else if(colors[rand] === "red"){
 				$(answer).css('background-color','red');
 				move();
-				colorTimer();
+				//colorTimer();
 			return "red";
 		}
 	}
 
 	//compare answer
 	function compareAnswer(ans, color){
-		start();
+		//start();
 		var spanScore = document.getElementById('spanScore');
 		console.log(easy);
 		if(ans !== color || easy === 0 ){
@@ -88,7 +88,6 @@ $(function(){
 			score +=100;
 			spanScore.innerHTML = score;
 			listenForKeyPress();
-			//removeInterval();
 		}
 	}
 
