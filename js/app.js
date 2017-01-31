@@ -48,7 +48,8 @@ $(function(){
 				stopTimer();
 				//easy = 3;
 			}
-			textAns.innerHTML = colorText[rand];
+			//textAns.innerHTML = colorText[rand];
+			hardMode();
 			compareAnswer(ans, color);
 		});
 	}
@@ -118,6 +119,13 @@ $(function(){
     	clearInterval(clockEnd);
 	}
 
+	function hardMode(){
+		textAns.innerHTML = "";
+		if(score >= 1500){
+			var rand = Math.floor(Math.random()*colorText.length);
+			textAns.innerHTML = colorText[rand];
+		}
+	}
 });
 
 
