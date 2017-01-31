@@ -1,10 +1,15 @@
 $(function(){
 
 	var answer = document.getElementById('answer');
+	var textAns = document.getElementById('textAns');
+	// add more colors inside the array
+	var colorText = ["ORANGE", "RED"]
 	var colors = ["orange", "red"];
 	var ans = "";
 	var score = 0;
 	var colorInterval;
+	var easy = 3;
+	var hard = 2;
 
 	//start button
 	$('#startBtn').on('click', function(){
@@ -33,12 +38,14 @@ $(function(){
 
 	function listenForKeyPress(){
 		var color = getColor();
+		var rand = Math.floor(Math.random()*colorText.length);
 		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
 				ans = "orange";
 			}else if(event.keyCode === 39){
 				ans = "red";
 			}
+			textAns.innerHTML = colorText[rand];
 			compareAnswer(ans, color);
 		});
 
@@ -102,7 +109,30 @@ $(function(){
 	function myFunction() {
 		 colorInterval = setInterval(listenForKeyPress, 3000);
 	}
+
+
 	//add set timeout if there is no answer
+
+	function countDown(){
+		 easy--;
+		 return easy;
+	}
+
+
+
+
+
+
+console.log(countDown());
+
+
+
+
+
+
+
+
+
 });
 
 
