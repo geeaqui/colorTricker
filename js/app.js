@@ -4,8 +4,7 @@ $(function(){
 	var colors = ["orange", "red"];
 	var ans = "";
 	var score = 0;
-	var status = true;
-	var myVar;
+	var colorInterval;
 
 	//start button
 	$('#startBtn').on('click', function(){
@@ -72,7 +71,7 @@ $(function(){
 			$(answer).css('display','none');
 			alert("game over");
 			status = false;
-			timer();
+			removeInterval();
 		}
 
 	}
@@ -90,14 +89,14 @@ $(function(){
     		}
   		}
 	}
-
-	function timer(){
-			clearInterval(myVar);
+	//stop the game
+	function removeInterval(){
+			clearInterval(colorInterval);
 	}
 
 	//set game speed
 	function myFunction() {
-		 myVar = setInterval(listenForKeyPress, 3000);
+		 colorInterval = setInterval(listenForKeyPress, 3000);
 	}
 	//add set timeout if there is no answer
 });
