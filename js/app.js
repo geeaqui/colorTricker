@@ -10,6 +10,7 @@ $(function(){
 	var colorInterval;
 	var easy = 3;
 	var clockEnd;
+	var timerId;
 
 	//start button
 	$('#startBtn').on('click', function(){
@@ -61,10 +62,12 @@ $(function(){
 			if(colors[rand] === "orange"){
 				$(answer).css('background-color','orange');
 				move();
+				colorTimer();
 				return "orange";
 			}else if(colors[rand] === "red"){
 				$(answer).css('background-color','red');
 				move();
+				colorTimer();
 			return "red";
 		}
 	}
@@ -106,10 +109,10 @@ $(function(){
 	function colorTimer() {  
 		var timer = document.getElementById('timer');
   		var width = 0;
-  		var id = setInterval(change, 30);
+  		 timerId = setInterval(change, 30);
   		function change() {
     		if (width == 100) {
-      			clearInterval(id);
+      			clearInterval(timerId);
     		} else {
       			width++; 
       			timer.style.width = width + '%'; 
@@ -130,7 +133,7 @@ $(function(){
 	}
 
 	function stopTimer() {
-    	clearInterval(clockEnd);
+    	clearInterval(timerId);
 	}
 
 	function hardMode(){
