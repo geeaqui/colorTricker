@@ -72,7 +72,7 @@ $(function(){
 
 	//compare answer
 	function compareAnswer(ans, color){
-		start();
+		//start();
 		var spanScore = document.getElementById('spanScore');
 		console.log(easy);
 		if(ans !== color || easy === 0 ){
@@ -84,9 +84,11 @@ $(function(){
 			console.log(easy);
 			console.log("You are right");
 			score +=100;
+			easy = 3;
 			spanScore.innerHTML = score;
 			listenForKeyPress();
 			//removeInterval();
+			start();
 		}
 	}
 
