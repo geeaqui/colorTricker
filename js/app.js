@@ -10,7 +10,8 @@ $(function(){
 	$('#startBtn').on('click', function(){
 		$('#front, #gamePage').slideToggle();
 		
-			myFunction();
+			//myFunction();
+			listenForKeyPress();
 	});
 
 	$('#back').click(function(){
@@ -34,12 +35,16 @@ $(function(){
 		var color = getColor();
 		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
-			ans = "orange";
+				ans = "orange";
 			}else if(event.keyCode === 39){
 				ans = "red";
 			}
 			compareAnswer(ans, color);
 		});
+
+		// setTimeout(function() {
+		// 	$(document).off("keydown");
+		// }, 2000);
 	}
 
 	//Generate random color between orange and red
@@ -64,12 +69,12 @@ $(function(){
 			console.log("You are right");
 			score +=100;
 			spanScore.innerHTML = score;
+			listenForKeyPress();
 		}else{
 			console.log("Game over");
-			//answer.style.display = "none";
 			$(answer).css('display','none');
 			alert("game over");
-			removeInterval();
+			//removeInterval();
 		}
 
 	}
@@ -83,10 +88,11 @@ $(function(){
       			clearInterval(id);
     		} else {
       			width++; 
-      		answer.style.width = width + '%'; 
+      			answer.style.width = width + '%'; 
     		}
   		}
 	}
+
 	//stop the game
 	function removeInterval(){
 			clearInterval(colorInterval);
