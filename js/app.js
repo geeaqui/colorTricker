@@ -10,6 +10,8 @@ $(function(){
 	var colorInterval;
 	var easy = 3;
 	var hard = 2;
+	var clockStart = 10;
+	var clockEnd;
 
 	//start button
 	$('#startBtn').on('click', function(){
@@ -42,8 +44,10 @@ $(function(){
 		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
 				ans = "orange";
+				stopTimer();
 			}else if(event.keyCode === 39){
 				ans = "red";
+				stopTimer()
 			}
 			textAns.innerHTML = colorText[rand];
 			compareAnswer(ans, color);
@@ -77,13 +81,14 @@ $(function(){
 			score +=100;
 			spanScore.innerHTML = score;
 			listenForKeyPress();
+		}else if(easy === 0){
+			alert("Game Over!");	
 		}else{
 			console.log("Game over");
 			$(answer).css('display','none');
 			alert("game over");
 			//removeInterval();
 		}
-
 	}
 
 	//animating the background color of div id="answer"
@@ -113,19 +118,33 @@ $(function(){
 
 	//add set timeout if there is no answer
 
-	function countDown(){
-		 easy--;
-		 return easy;
-	}
 
 
 
 
+//Testing
 
 
-console.log(countDown());
+var start = function() {
+  clockEnd = setInterval(countdown, 1000);
 
+  }
 
+var countdown = function() {
+	if (easy > 0) {
+    	easy = easy - 1;
+    	console.log(easy);
+    	if(easy === 0){
+    		console.log(easy);
+    	}
+      }
+}
+
+function stopTimer() {
+    clearInterval(clockEnd);
+}
+
+start();
 
 
 
