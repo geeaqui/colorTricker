@@ -10,7 +10,6 @@ $(function(){
 	var colorInterval;
 	var easy = 3;
 	var clockEnd;
-	var timerId;
 
 	//start button
 	$('#startBtn').on('click', function(){
@@ -43,11 +42,11 @@ $(function(){
 			if(event.keyCode === 37){
 				ans = "orange";
 				stopTimer();
-				easy = 3;
+				//easy = 3;
 			}else if(event.keyCode === 39){
 				ans = "red";
 				stopTimer();
-				easy = 3;
+				//easy = 3;
 			}
 			//textAns.innerHTML = colorText[rand];
 			hardMode();
@@ -57,24 +56,23 @@ $(function(){
 
 	//Generate random color between orange and red
 	function getColor(){
-		start();
+		//start();
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "orange"){
 				$(answer).css('background-color','orange');
 				move();
-				//colorTimer();
+				colorTimer();
 				return "orange";
 			}else if(colors[rand] === "red"){
 				$(answer).css('background-color','red');
 				move();
-				//colorTimer();
 			return "red";
 		}
 	}
 
 	//compare answer
 	function compareAnswer(ans, color){
-		//start();
+		start();
 		var spanScore = document.getElementById('spanScore');
 		console.log(easy);
 		if(ans !== color || easy === 0 ){
@@ -88,6 +86,7 @@ $(function(){
 			score +=100;
 			spanScore.innerHTML = score;
 			listenForKeyPress();
+			//removeInterval();
 		}
 	}
 
@@ -108,10 +107,10 @@ $(function(){
 	function colorTimer() {  
 		var timer = document.getElementById('timer');
   		var width = 0;
-  		 timerId = setInterval(change, 30);
+  		var id = setInterval(change, 30);
   		function change() {
     		if (width == 100) {
-      			clearInterval(timerId);
+      			clearInterval(id);
     		} else {
       			width++; 
       			timer.style.width = width + '%'; 
@@ -132,7 +131,7 @@ $(function(){
 	}
 
 	function stopTimer() {
-    	clearInterval(timerId);
+    	clearInterval(clockEnd);
 	}
 
 	function hardMode(){
