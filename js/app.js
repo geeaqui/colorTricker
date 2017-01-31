@@ -5,6 +5,7 @@ $(function(){
 	var ans = "";
 	var score = 0;
 	var status = true;
+	var myVar;
 
 	//start button
 	$('#startBtn').on('click', function(){
@@ -46,12 +47,12 @@ $(function(){
 	function getColor(){
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "orange"){
-				//answer.style.background = "orange";
 				$(answer).css('background-color','orange');
+				move();
 				return "orange";
 			}else if(colors[rand] === "red"){
-				//answer.style.background = "red";
 				$(answer).css('background-color','red');
+				move();
 			return "red";
 		}
 	}
@@ -75,11 +76,24 @@ $(function(){
 
 	}
 
-	//set game speed
-	function myFunction() {
-		myVar = setInterval(listenForKeyPress, 3000);
+
+	function move() {  
+  		var width = 0;
+  		var id = setInterval(frame, 10);
+  		function frame() {
+    		if (width == 35) {
+      			clearInterval(id);
+    		} else {
+      			width++; 
+      		answer.style.width = width + '%'; 
+    		}
+  		}
 	}
 
+	//set game speed
+	function myFunction() {
+		 myVar = setInterval(listenForKeyPress, 3000);
+	}
 	//add set timeout if there is no answer
 });
 
