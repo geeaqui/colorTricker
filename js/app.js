@@ -64,13 +64,11 @@ $(function(){
 			console.log("You are right");
 			score +=100;
 			spanScore.innerHTML = score;
-			status =true;
 		}else{
 			console.log("Game over");
 			//answer.style.display = "none";
 			$(answer).css('display','none');
 			alert("game over");
-			status = false;
 			removeInterval();
 		}
 
