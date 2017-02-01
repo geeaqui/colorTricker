@@ -27,7 +27,7 @@ $(function(){
 	$('#back').click(function(){
 		$('#front, #gamePage').slideToggle();
 		var li = document.createElement("li");
-			li.innerHTML = "player " + index + "score: "+ player1;
+			li.innerHTML = "player " + (index++) + " score: "+ player1;
 			colors2.appendChild(li);
 		resetScore();
 	});
@@ -213,7 +213,12 @@ $(function(){
 		console.log(player1);
 		spanScore.innerHTML = player1;
 	}
-	//add another page for player 2
+	
+	function addPlayer(){
+ 		for (var i = 0; i < 50; i ++){
+ 			players[i] = i+1;
+ 		}
+ 	}
 });
 
 
