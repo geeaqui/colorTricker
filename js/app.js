@@ -1,7 +1,10 @@
 $(function(){
-	//VARIABLES
+	/**
+	* VARIABLES
+	*/
 	var answer = document.getElementById('answer');
 	var textAns = document.getElementById('textAns');
+	var scoreBoard = document.getElementById('colors2');
 	var colorText = ["GREEN","YELLOW","LEFT", "RIGHT"]
 	var colors = ["green", "yellow"];
 	var ans = "";
@@ -13,7 +16,6 @@ $(function(){
 	var colorId2;
 	var player1 = 0;
 	var index = 1;
-	var scoreBoard = document.getElementById('colors2');
 
 	/** 
 	* Player 1 Button
@@ -209,17 +211,16 @@ $(function(){
 		}
 	}
 
+	?
+	/**
+	* Reset the score back to zero and print the prev score to the innerHTML of spanScore
+	*/
 	function resetScore(){
 		player1 = 0;
 		console.log(player1);
 		spanScore.innerHTML = player1;
 	}
 	
-	function addPlayer(){
- 		for (var i = 0; i < 50; i ++){
- 			players[i] = i+1;
- 		}
- 	}
 });
 
 
