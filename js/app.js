@@ -22,6 +22,7 @@ $(function(){
 		$('#front, #gamePage').slideToggle();	
       	listenForKeyPress();
       	resetScore();
+      	easy = 3;
 	});
 
 	$('#back').click(function(){
