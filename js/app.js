@@ -3,7 +3,7 @@ $(function(){
 	var answer = document.getElementById('answer');
 	var textAns = document.getElementById('textAns');
 	// add more colors inside the array
-	var colorText = ["ORANGE", "RED"]
+	var colorText = ["RED","ORANGE","LEFT", "RIGHT"]
 	var colors = ["orange", "red"];
 	var ans = "";
 	var score = 0;
@@ -32,7 +32,6 @@ $(function(){
 	$('#mainMenu').click(function(){
 		$('#front, #instrucPage').slideToggle();
 	});
-
 
 	//key event listener
 
@@ -69,6 +68,7 @@ $(function(){
 			}else if(colors[rand] === "red"){
 				$(answer).css('background-color','red');
 				move();
+				colorTimer();
 			return "red";
 		}
 	}
@@ -142,6 +142,7 @@ $(function(){
 	function stopColor() {
     	clearInterval(colorId);
 	}
+	
 	function hardMode(){
 		textAns.innerHTML = "";
 		if(score >= 1500){
