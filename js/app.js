@@ -88,13 +88,11 @@ $(function(){
 	function getColor(){
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "green"){
-				//$(answer).css('background-color','orange');
 				$(answer).css('background-color','#63ffb1')
 				move();
 				colorTimer();
 				return "green";
 			}else if(colors[rand] === "yellow"){
-				//$(answer).css('background-color','red');
 				$(answer).css('background-color','#ffff91');
 				move();
 				colorTimer();
@@ -108,9 +106,10 @@ $(function(){
 		console.log(easy);
 		if(ansr !== color || easy === 0 ){
 			console.log(easy);
-			console.log("Game over");
+			//console.log("Game over");
+			textAns.innerHTML = "Game Over!"
 			//$(answer).css('display','none');
-			alert("game over");	
+			//alert("game over");	
 		}else if(ansr === color){
 			//console.log(easy);
 			console.log("You are right");
@@ -211,7 +210,7 @@ $(function(){
 		}
 	}
 
-	?
+	
 	/**
 	* Reset the score back to zero and print the prev score to the innerHTML of spanScore
 	*/
@@ -221,6 +220,8 @@ $(function(){
 		spanScore.innerHTML = player1;
 	}
 	
+
+	//add ready box that slides up within 3 sec before the game start
 });
 
 
