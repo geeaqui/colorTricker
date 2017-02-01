@@ -129,18 +129,18 @@ header h1{
 	top:202px;
 	display: none;
 }
-#orange, #red{
+#green, #yellow{
 	width:450px;
 	height:500px;
 	margin:0;
 }
 
-#orange{
+#green{
 	//background-color:#ff961e;
 	background-color: #63ffb1;
 }
 
-#red{
+#yellow{
 	//background-color:red;
 	background-color: #ffff91;
 }
