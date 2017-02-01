@@ -3,7 +3,7 @@ $(function(){
 	var answer = document.getElementById('answer');
 	var textAns = document.getElementById('textAns');
 	var colorText = ["GREEN","YELLOW","LEFT", "RIGHT"]
-	var colors = ["green", "red"];
+	var colors = ["green", "yellow"];
 	var ans = "";
 	var score = 0;
 	var colorInterval;
@@ -11,6 +11,9 @@ $(function(){
 	var clockEnd;
 	var colorId;
 	var colorId2;
+	var highscore = localStorage.getItem("highscore");
+	var player1;
+	var player2;
 
 	/** 
 	* add function to the button id "startBtn"
@@ -51,7 +54,7 @@ $(function(){
 				stopTimer();
 				//easy = 3;
 			}else if(event.keyCode === 39){
-				ans = "red";
+				ans = "yellow";
 				stopColor();
 				stopTimer();
 				//easy = 3;
@@ -71,12 +74,12 @@ $(function(){
 				move();
 				colorTimer();
 				return "green";
-			}else if(colors[rand] === "red"){
+			}else if(colors[rand] === "yellow"){
 				//$(answer).css('background-color','red');
 				$(answer).css('background-color','#ffff91');
 				move();
 				colorTimer();
-			return "red";
+				return "yellow";
 		}
 	}
 
@@ -98,13 +101,12 @@ $(function(){
 			easy =3 ;
 			}else if(score >1000){
 				easy =2;
-				score+=200;
 			}
-
 			console.log(easy);
 			spanScore.innerHTML = score;
 			listenForKeyPress();
 			start();
+			getHighScore();
 		}
 	}
 
@@ -145,11 +147,17 @@ $(function(){
   		}
 	}
 
-	//add set timeout if there is no answer
+
+	/**
+	* set an interval for function countdown that will run every 1second
+	*/
 	var start = function() {
   		clockEnd = setInterval(countdown, 1000);
 	}
 
+	/**
+	* decrease the variable easy by 1
+	*/
 	var countdown = function() {
 		if (easy > 0) {
     		easy = easy - 1;
@@ -157,15 +165,24 @@ $(function(){
       	}
 	}
 
+	/**
+	* stop the interval of the varible clockend
+	*/
 	function stopTimer() {
     	clearInterval(clockEnd);
 	}
 
+	/**
+	* stop the interval of the varible colorID and colorId2
+	*/
 	function stopColor() {
     	clearInterval(colorId);
     	clearInterval(colorId2);
 	}
 	
+	/**
+	*r Randomly display the list inside the array colorText when the condition is met
+	*/
 	function hardMode(){
 		textAns.innerHTML = "";
 		if(score >= 1100){
@@ -175,6 +192,22 @@ $(function(){
 			$('#answer').css('opacity') = '0.6';
 		}
 	}
+
+
+	function getHighScore(){
+
+		if(highscore !== null){
+   			if (score > parseInt(highscore)) {
+      			localStorage.setItem("highscore", score );
+      			console.log(highscore);
+      		}
+		}else{
+      		localStorage.setItem("highscore", score );
+      		console.log(highscore);
+		}
+	}
+
+	//add another page for player 2
 });
 
 
