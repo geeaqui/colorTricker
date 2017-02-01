@@ -291,6 +291,13 @@ header h1{
 	color:#fff;
 }
 
+#answer #ready{
+	position: relative;
+	font-size:120px;
+	top:-50px;
+	font-family: 'Barrio', cursive;
+	transition: 2s;
+}
 
 /************** Footer *******************/
 #foot{

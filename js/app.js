@@ -16,16 +16,22 @@ $(function(){
 	var colorId2;
 	var score = 0;
 	var index = 1;
+	var imageMove ;
 
 	/** 
 	* Player 1 Button
 	*/
 	$('#startBtn').on('click', function(){
 		$('#front, #gamePage').slideToggle();
-		textAns.innerHTML = "Are You Ready?"	
+		var para = document.createElement("p");
+		para.setAttribute("id", "ready")
+		para.innerHTML = "GET READY!";
+		answer.appendChild(para);
+		//textAns.innerHTML = "Are You Ready?"	
       	listenForKeyPress();
       	resetScore();
       	easy = 2;
+      	imgMove();
 	});
 
 	$('#back').click(function(){
@@ -34,6 +40,7 @@ $(function(){
 		li.innerHTML = "player " + (index++) + " score: "+ score;
 		colors2.appendChild(li);
 		resetScore();
+		$('#ready').remove();
 	});
 
 
@@ -52,6 +59,8 @@ $(function(){
 	//instruction button
 	$('#intBtn').click(function(){
 		$('#front, #instrucPage').slideToggle();
+		console.log("instruction");
+		
 	});
 
 	$('#mainMenu').click(function(){
@@ -221,6 +230,18 @@ $(function(){
 		spanScore.innerHTML = score;
 	}
 	
+
+	function imgMove(){
+		setInterval(moveImage,2000);
+	}
+
+	function moveImage(){
+		$('#ready').animate({top:"-600px"});
+	}
+
+	function clearImageInt(){
+		clearInterval(moveImage);
+	}
 
 	//add ready box that slides up within 3 sec before the game start
 
