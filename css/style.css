@@ -136,11 +136,13 @@ header h1{
 }
 
 #orange{
-	background-color:#ff961e;
+	//background-color:#ff961e;
+	background-color: #63ffb1;
 }
 
 #red{
-	background-color:red;
+	//background-color:red;
+	background-color: #ffff91;
 }
 
 #back{

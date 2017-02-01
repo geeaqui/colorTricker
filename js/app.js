@@ -66,12 +66,14 @@ $(function(){
 	function getColor(){
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "orange"){
-				$(answer).css('background-color','orange');
+				//$(answer).css('background-color','orange');
+				$(answer).css('background-color','#63ffb1')
 				move();
 				colorTimer();
 				return "orange";
 			}else if(colors[rand] === "red"){
-				$(answer).css('background-color','red');
+				//$(answer).css('background-color','red');
+				$(answer).css('background-color','#ffff91');
 				move();
 				colorTimer();
 			return "red";
