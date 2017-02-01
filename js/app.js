@@ -10,28 +10,29 @@ $(function(){
 	var ans = "";
 	var score = 0;
 	var colorInterval;
-	var easy = 3;
+	var easy = 2;
 	var clockEnd;
 	var colorId;
 	var colorId2;
-	var player1 = 0;
+	var score = 0;
 	var index = 1;
 
 	/** 
 	* Player 1 Button
 	*/
 	$('#startBtn').on('click', function(){
-		$('#front, #gamePage').slideToggle();	
+		$('#front, #gamePage').slideToggle();
+		textAns.innerHTML = "Are You Ready?"	
       	listenForKeyPress();
       	resetScore();
-      	easy = 3;
+      	easy = 2;
 	});
 
 	$('#back').click(function(){
 		$('#front, #gamePage').slideToggle();
 		var li = document.createElement("li");
-			li.innerHTML = "player " + (index++) + " score: "+ player1;
-			colors2.appendChild(li);
+		li.innerHTML = "player " + (index++) + " score: "+ score;
+		colors2.appendChild(li);
 		resetScore();
 	});
 
@@ -113,15 +114,15 @@ $(function(){
 		}else if(ansr === color){
 			//console.log(easy);
 			console.log("You are right");
-			player1 +=100;
+			score +=100;
 
-			if(player1 <=1000){
-			easy =3 ;
-			}else if(player1 >1000){
-				easy =2;
+			if(score <=1000){
+			easy =2 ;
+			}else if(score >1000){
+				easy =1;
 			}
 			console.log(easy);
-			spanScore.innerHTML = player1;
+			spanScore.innerHTML = score;
 			listenForKeyPress();
 			start();
 		}
@@ -148,10 +149,10 @@ $(function(){
 		var timer = document.getElementById('timer');
   		var width = 0;
 
-  		if(player1 <= 1000){
-  		colorId = setInterval(change, 30);
-  		}else if(player1 > 1000){
-  		colorId2 = setInterval(change, 20);
+  		if(score <= 1000){
+  		colorId = setInterval(change, 20);
+  		}else if(score > 1000){
+  		colorId2 = setInterval(change, 10);
   		}
 
   		function change() {
@@ -202,10 +203,10 @@ $(function(){
 	*/
 	function hardMode(){
 		textAns.innerHTML = "";
-		if(player1 >= 1100){
+		if(score >= 1100){
 			var rand = Math.floor(Math.random()*colorText.length);
 			textAns.innerHTML = colorText[rand];
-		}else if(player1 >=2000){
+		}else if(score >=2000){
 			$('#answer').css('opacity') = '0.6';
 		}
 	}
@@ -215,13 +216,15 @@ $(function(){
 	* Reset the score back to zero and print the prev score to the innerHTML of spanScore
 	*/
 	function resetScore(){
-		player1 = 0;
-		console.log(player1);
-		spanScore.innerHTML = player1;
+		score = 0;
+		console.log(score);
+		spanScore.innerHTML = score;
 	}
 	
 
 	//add ready box that slides up within 3 sec before the game start
+
+	//add a ready sound whenever start button is
 });
 
 
