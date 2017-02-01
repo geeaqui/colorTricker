@@ -94,7 +94,7 @@ $(function(){
 
 			if(score <=1000){
 			easy =3 ;
-			}else if(score >1500){
+			}else if(score >1000){
 				easy =2;
 				score+=200;
 			}
@@ -126,8 +126,13 @@ $(function(){
 	function colorTimer() {  
 		var timer = document.getElementById('timer');
   		var width = 0;
+
+  		if(score <= 1000){
   		colorId = setInterval(change, 30);
+  		}else if(score > 1000){
   		colorId2 = setInterval(change, 20);
+  		}
+
   		function change() {
     		if (width == 100) {
       			clearInterval(colorId );
@@ -156,6 +161,7 @@ $(function(){
 
 	function stopColor() {
     	clearInterval(colorId);
+    	clearInterval(colorId2);
 	}
 	
 	function hardMode(){
