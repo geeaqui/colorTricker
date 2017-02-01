@@ -11,23 +11,33 @@ $(function(){
 	var clockEnd;
 	var colorId;
 	var colorId2;
-	var highscore = localStorage.getItem("highscore");
-	var player1;
-	var player2;
+	var player1 = 0;
+	var player2 = 0;
 
 	/** 
-	* add function to the button id "startBtn"
+	* Player 1 Button
 	*/
 	$('#startBtn').on('click', function(){
 		$('#front, #gamePage').slideToggle();	
       	listenForKeyPress();
-			//listenForKeyPress();
 	});
 
 	$('#back').click(function(){
 		$('#front, #gamePage').slideToggle();
 	});
 
+
+	/**
+	*Player 2 Button
+	*/
+	$('#player2').on('click', function(){
+		$('#front, #gamePage2').slideToggle();	
+      	listenForKeyPress2();
+	});
+
+	$('#back2').click(function(){
+		$('#front, #gamePage2').slideToggle();
+	});
 
 	//instruction button
 	$('#intBtn').click(function(){
@@ -65,6 +75,28 @@ $(function(){
 		});
 	}
 
+	function listenForKeyPress2(){
+		var color = getColor();
+		//var rand = Math.floor(Math.random()*colorText.length);
+		$(document).one("keydown", function(event){
+			if(event.keyCode === 37){
+				ans = "green";
+				stopColor();
+				stopTimer();
+				//easy = 3;
+			}else if(event.keyCode === 39){
+				ans = "yellow";
+				stopColor();
+				stopTimer();
+				//easy = 3;
+			}
+			//textAns.innerHTML = colorText[rand];
+			hardMode();
+			compareAnswer2(ans, color);
+		});
+	}
+
+
 	//Generate random color between orange and red
 	function getColor(){
 		var rand = Math.floor(Math.random()*colors.length);
@@ -84,31 +116,56 @@ $(function(){
 	}
 
 	//compare answer
-	function compareAnswer(ans, color){
+	function compareAnswer(ansr, color){
 		var spanScore = document.getElementById('spanScore');
+		console.log(easy);
+		if(ansr !== color || easy === 0 ){
+			console.log(easy);
+			console.log("Game over");
+			//$(answer).css('display','none');
+			alert("game over");	
+		}else if(ansr === color){
+			//console.log(easy);
+			console.log("You are right");
+			player1 +=100;
+
+			if(player1 <=1000){
+			easy =3 ;
+			}else if(player1 >1000){
+				easy =2;
+			}
+			console.log(easy);
+			spanScore.innerHTML = player1;
+			listenForKeyPress();
+			start();
+		}
+	}
+
+	function compareAnswer2(ans, color){
+		var spanScore2 = document.getElementById('spanScore');
 		console.log(easy);
 		if(ans !== color || easy === 0 ){
 			console.log(easy);
 			console.log("Game over");
-			$(answer).css('display','none');
+			//$(answer).css('display','none');
 			alert("game over");	
 		}else if(ans === color){
 			//console.log(easy);
 			console.log("You are right");
-			score +=100;
+			player2 +=100;
 
-			if(score <=1000){
+			if(player1 <=1000){
 			easy =3 ;
-			}else if(score >1000){
+			}else if(player1 >1000){
 				easy =2;
 			}
 			console.log(easy);
-			spanScore.innerHTML = score;
+			spanScore2.innerHTML = player2;
 			listenForKeyPress();
 			start();
-			getHighScore();
 		}
 	}
+
 
 	//animating the background color of div id="answer"
 	function move() {  
@@ -131,9 +188,9 @@ $(function(){
 		var timer = document.getElementById('timer');
   		var width = 0;
 
-  		if(score <= 1000){
+  		if(player1 <= 1000){
   		colorId = setInterval(change, 30);
-  		}else if(score > 1000){
+  		}else if(player1 > 1000){
   		colorId2 = setInterval(change, 20);
   		}
 
@@ -185,27 +242,14 @@ $(function(){
 	*/
 	function hardMode(){
 		textAns.innerHTML = "";
-		if(score >= 1100){
+		if(player1 >= 1100){
 			var rand = Math.floor(Math.random()*colorText.length);
 			textAns.innerHTML = colorText[rand];
-		}else if(score >=2000){
+		}else if(player1 >=2000){
 			$('#answer').css('opacity') = '0.6';
 		}
 	}
 
-
-	function getHighScore(){
-
-		if(highscore !== null){
-   			if (score > parseInt(highscore)) {
-      			localStorage.setItem("highscore", score );
-      			console.log(highscore);
-      		}
-		}else{
-      		localStorage.setItem("highscore", score );
-      		console.log(highscore);
-		}
-	}
 
 	//add another page for player 2
 });
