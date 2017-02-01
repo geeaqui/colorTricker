@@ -2,8 +2,8 @@ $(function(){
 	//VARIABLES
 	var answer = document.getElementById('answer');
 	var textAns = document.getElementById('textAns');
-	var colorText = ["RED","ORANGE","LEFT", "RIGHT"]
-	var colors = ["orange", "red"];
+	var colorText = ["GREEN","YELLOW","LEFT", "RIGHT"]
+	var colors = ["green", "red"];
 	var ans = "";
 	var score = 0;
 	var colorInterval;
@@ -46,7 +46,7 @@ $(function(){
 		//var rand = Math.floor(Math.random()*colorText.length);
 		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
-				ans = "orange";
+				ans = "green";
 				stopColor();
 				stopTimer();
 				//easy = 3;
@@ -65,12 +65,12 @@ $(function(){
 	//Generate random color between orange and red
 	function getColor(){
 		var rand = Math.floor(Math.random()*colors.length);
-			if(colors[rand] === "orange"){
+			if(colors[rand] === "green"){
 				//$(answer).css('background-color','orange');
 				$(answer).css('background-color','#63ffb1')
 				move();
 				colorTimer();
-				return "orange";
+				return "green";
 			}else if(colors[rand] === "red"){
 				//$(answer).css('background-color','red');
 				$(answer).css('background-color','#ffff91');
