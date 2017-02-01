@@ -26,12 +26,13 @@ $(function(){
 	});
 
 	$('#back').click(function(){
+		for(var i=1; i>0; i++){
 		$('#front, #gamePage').slideToggle();
 		var li = document.createElement("li");
-			li.innerHTML = "player" + index + player1;
+			li.innerHTML = "player " + i + "score: "+ player1;
 			colors2.appendChild(li);
 		resetScore();
-		
+		}
 	});
 
 

@@ -229,21 +229,19 @@ header h1{
 	top:202px;
 	display: none;
 }
-#green2, #yellow2{
-	width:450px;
-	height:500px;
-	margin:0;
-}
 
-#green2{
-	//background-color:#ff961e;
-	background-color: #63ffb1;
+#colors2 {
+	width:400px;
+	height: 400px;
+	background-color: red;
+	margin-left: auto;
+	margin-right: auto;
 }
-
-#yellow2{
-	//background-color:red;
-	background-color: #ffff91;
-}
+/*#colors2 li{
+	position:relative;
+	top:300px;
+	font-size: 28px;
+}*/
 
 #back2{
 	position: relative;
