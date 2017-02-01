@@ -235,6 +235,9 @@ header h1{
 	margin-right: auto;
 	list-style-type: circle;
 	display: block;
+	-webkit-box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -5px 6px 5px 0px rgba(0,0,0,0.75);
 }
 
 #colors2 li{
@@ -250,8 +253,9 @@ header h1{
 	position: relative;
 	//top:-235px;
 	font-size:24px;
-	opacity:.7;
 	width:400px;
+	background-color: #36374f;
+	color:#fff;
 }
 
 
@@ -266,7 +270,7 @@ header h1{
 	position: relative;
 	display: inline-block;
 	background-color: #36374f;
-	top: -236px;
+	top: -233px;
 	left:250px;
 	margin-left: auto;
 	margin-right: auto;
