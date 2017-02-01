@@ -1,8 +1,7 @@
 $(function(){
-
+	//VARIABLES
 	var answer = document.getElementById('answer');
 	var textAns = document.getElementById('textAns');
-	// add more colors inside the array
 	var colorText = ["RED","ORANGE","LEFT", "RIGHT"]
 	var colors = ["orange", "red"];
 	var ans = "";
@@ -11,8 +10,11 @@ $(function(){
 	var easy = 3;
 	var clockEnd;
 	var colorId;
+	var colorId2;
 
-	//start button
+	/** 
+	* add function to the button id "startBtn"
+	*/
 	$('#startBtn').on('click', function(){
 		$('#front, #gamePage').slideToggle();	
       	listenForKeyPress();
@@ -33,11 +35,15 @@ $(function(){
 		$('#front, #instrucPage').slideToggle();
 	});
 
-	//key event listener
 
+	
+	/** 
+	* invoke the function getColor() and store it to the variable color
+	* add an event listener that assigns value to to left and right arrow key
+	*/
 	function listenForKeyPress(){
 		var color = getColor();
-		var rand = Math.floor(Math.random()*colorText.length);
+		//var rand = Math.floor(Math.random()*colorText.length);
 		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
 				ans = "orange";
@@ -58,7 +64,6 @@ $(function(){
 
 	//Generate random color between orange and red
 	function getColor(){
-		//start();
 		var rand = Math.floor(Math.random()*colors.length);
 			if(colors[rand] === "orange"){
 				$(answer).css('background-color','orange');
@@ -75,7 +80,6 @@ $(function(){
 
 	//compare answer
 	function compareAnswer(ans, color){
-		//start();
 		var spanScore = document.getElementById('spanScore');
 		console.log(easy);
 		if(ans !== color || easy === 0 ){
@@ -84,13 +88,20 @@ $(function(){
 			$(answer).css('display','none');
 			alert("game over");	
 		}else if(ans === color){
-			console.log(easy);
+			//console.log(easy);
 			console.log("You are right");
 			score +=100;
-			easy =3
+
+			if(score <=1000){
+			easy =3 ;
+			}else if(score >1500){
+				easy =2;
+				score+=200;
+			}
+
+			console.log(easy);
 			spanScore.innerHTML = score;
 			listenForKeyPress();
-			//removeInterval();
 			start();
 		}
 	}
@@ -109,10 +120,14 @@ $(function(){
   		}
 	}
 
+	/** 
+	* animate a timer inside the html div ID 'timer'
+	*/
 	function colorTimer() {  
 		var timer = document.getElementById('timer');
   		var width = 0;
   		colorId = setInterval(change, 30);
+  		colorId2 = setInterval(change, 20);
   		function change() {
     		if (width == 100) {
       			clearInterval(colorId );
@@ -145,9 +160,11 @@ $(function(){
 	
 	function hardMode(){
 		textAns.innerHTML = "";
-		if(score >= 1500){
+		if(score >= 1100){
 			var rand = Math.floor(Math.random()*colorText.length);
 			textAns.innerHTML = colorText[rand];
+		}else if(score >=2000){
+			$('#answer').css('opacity') = '0.6';
 		}
 	}
 });
