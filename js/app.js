@@ -26,8 +26,7 @@ $(function(){
 		var para = document.createElement("p");
 		para.setAttribute("id", "ready")
 		para.innerHTML = "GET READY!";
-		answer.appendChild(para);
-		//textAns.innerHTML = "Are You Ready?"	
+		answer.appendChild(para);	
       	listenForKeyPress();
       	resetScore();
       	easy = 2;
@@ -41,6 +40,7 @@ $(function(){
 		colors2.appendChild(li);
 		resetScore();
 		$('#ready').remove();
+		$('#gameOver').remove();
 	});
 
 
@@ -113,11 +113,14 @@ $(function(){
 	//compare answer
 	function compareAnswer(ansr, color){
 		var spanScore = document.getElementById('spanScore');
+		var para2 = document.createElement("p");
+		para2.setAttribute("id", "gameOver")
 		console.log(easy);
 		if(ansr !== color || easy === 0 ){
 			console.log(easy);
 			//console.log("Game over");
-			textAns.innerHTML = "Game Over!"
+			para2.innerHTML = "Game Over!"
+			answer.appendChild(para2);
 			//$(answer).css('display','none');
 			//alert("game over");	
 		}else if(ansr === color){
@@ -236,7 +239,7 @@ $(function(){
 	}
 
 	function moveImage(){
-		$('#ready').animate({top:"-600px"});
+		$('#ready').animate({top:"-800px"});
 	}
 
 	function clearImageInt(){

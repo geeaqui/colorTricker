@@ -294,7 +294,15 @@ header h1{
 #answer #ready{
 	position: relative;
 	font-size:120px;
-	top:-50px;
+	top:-100px;
+	font-family: 'Barrio', cursive;
+	transition: 2s;
+}
+
+#answer #gameOver{
+	position: relative;
+	font-size:120px;
+	top:-400px;
 	font-family: 'Barrio', cursive;
 	transition: 2s;
 }
