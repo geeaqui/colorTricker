@@ -86,6 +86,10 @@ header h1{
 	font-family: 'Barrio', cursive;
 }
 
+.myButton:hover{
+	background-color: #36374f;
+}
+
 #player2{
 	font-size:20px;
 	width:200px;
