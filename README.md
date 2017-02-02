@@ -19,8 +19,8 @@ Get as much score as you can, the game gets harder once you get 1000points.
 
 The reule of the game is very simple. The player just need to choose between color green and yellow and get as much points as they can get and players can compare their scores in the score board.
 
-I made this individual project as part of my training with SpartaGlobal within the timespan of 4days.
+I made this individual project for 4 days timespan as part of my training with SpartaGlobal. I used my knowledge of HTML, CSS, JavaScript&JQuery to build this program.
 
-This is my very first game project and also because I am only beggining to learn javascript, I decided to make a very simple concept for the game.
+As this is my very first time to do a game project and also because I am only beginning to learn javascript, I decided to make a very simple concept for the game.
 
 Thank you and have fun playing :) .

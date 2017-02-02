@@ -12,7 +12,7 @@ header{
 	background-color:#1c3f77;
 }
 header h1, .myButton, #instrucPage, #mainMenu, #back, #gameFooter p #answer p,
-#colors2 li, #listScore{
+#colors2 li, #listScore, #footIcon{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -358,7 +358,6 @@ header h1{
 #footIcon{
 	padding-top: 50px;
 	text-align: center;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color:#fff;
 	width:400px;
 	height:100px;

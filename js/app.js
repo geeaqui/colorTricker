@@ -82,22 +82,18 @@ $(function(){
 	*/
 	function listenForKeyPress(){
 		var color = getColor();
-		//var rand = Math.floor(Math.random()*colorText.length);
 		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
 				document.getElementById('shushSound').play();
 				ans = "green";
 				stopColor();
 				stopTimer();
-				//easy = 3;
 			}else if(event.keyCode === 39){
 				document.getElementById('shushSound').play();
 				ans = "yellow";
 				stopColor();
 				stopTimer();
-				//easy = 3;
 			}
-			//textAns.innerHTML = colorText[rand];
 			hardMode();
 			compareAnswer(ans, color);
 		});
@@ -110,11 +106,14 @@ $(function(){
 			$(answer).css('background-color','#63ffb1')
 			move();
 			colorTimer();
+
 			return "green";
+
 		}else if(colors[rand] === "yellow"){
 			$(answer).css('background-color','#ffff91');
 			move();
 			colorTimer();
+
 			return "yellow";
 		}
 	}
@@ -131,13 +130,7 @@ $(function(){
 		}else if(ansr === color){
 			console.log("You are right");
 			score +=100;
-
 			makeHarder();
-			// if(score <=1000){
-			// easy =2 ;
-			// }else if(score >1000){
-			// 	easy =1;
-			// }
 			console.log(easy);
 			spanScore.innerHTML = score;
 			listenForKeyPress();
@@ -167,9 +160,9 @@ $(function(){
   		var width = 0;
 
   		if(score <= 1000){
-  		colorId = setInterval(change, 20);
+  			colorId = setInterval(change, 20);
   		}else if(score > 1000){
-  		colorId2 = setInterval(change, 10);
+  			colorId2 = setInterval(change, 10);
   		}
 
   		function change() {
@@ -224,7 +217,7 @@ $(function(){
 			var rand = Math.floor(Math.random()*colorText.length);
 			textAns.innerHTML = colorText[rand];
 		}else if(score >=1000){
-			$('#answer').animate({opacity:".7"});
+			$('#answer').animate({opacity:"1"});
 		}
 	}
 
