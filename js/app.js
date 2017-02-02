@@ -106,16 +106,16 @@ $(function(){
 	//Generate random color between orange and red
 	function getColor(){
 		var rand = Math.floor(Math.random()*colors.length);
-			if(colors[rand] === "green"){
-				$(answer).css('background-color','#63ffb1')
-				move();
-				colorTimer();
-				return "green";
-			}else if(colors[rand] === "yellow"){
-				$(answer).css('background-color','#ffff91');
-				move();
-				colorTimer();
-				return "yellow";
+		if(colors[rand] === "green"){
+			$(answer).css('background-color','#63ffb1')
+			move();
+			colorTimer();
+			return "green";
+		}else if(colors[rand] === "yellow"){
+			$(answer).css('background-color','#ffff91');
+			move();
+			colorTimer();
+			return "yellow";
 		}
 	}
 
@@ -132,11 +132,12 @@ $(function(){
 			console.log("You are right");
 			score +=100;
 
-			if(score <=1000){
-			easy =2 ;
-			}else if(score >1000){
-				easy =1;
-			}
+			makeHarder();
+			// if(score <=1000){
+			// easy =2 ;
+			// }else if(score >1000){
+			// 	easy =1;
+			// }
 			console.log(easy);
 			spanScore.innerHTML = score;
 			listenForKeyPress();
@@ -222,8 +223,8 @@ $(function(){
 		if(score >= 1100){
 			var rand = Math.floor(Math.random()*colorText.length);
 			textAns.innerHTML = colorText[rand];
-		}else if(score >=2000){
-			$('#answer').css('opacity') = '0.6';
+		}else if(score >=1000){
+			$('#answer').animate({opacity:".7"});
 		}
 	}
 
@@ -250,6 +251,13 @@ $(function(){
 		clearInterval(moveImage);
 	}
 
+	function makeHarder(){
+		if(score <=1000){
+			easy =2 ;
+		}else if(score >1000){
+			easy =1;
+		}
+	}
 	//add ready box that slides up within 3 sec before the game start
 
 	//add a ready sound whenever start button is
