@@ -1,21 +1,21 @@
 <!-- How to play the Game -->
 
-<!-- Control Keys -->
+#Control Keys
 
 Left arrow key : to choose GREEN
 Right arrow key : to choose YELLOW
 
-<!-- Choosing colors -->
+#Choosing colors
 
-*Random color will appear on the box in the middle of the game screen.
-*A new color will ONLY appear once the current color is answer correctly.
+Random color will appear on the box in the middle of the game screen.
+A new color will ONLY appear once the current color is answer correctly.
 
-<!-- Scoring -->
+#Scoring
 Get as much score as you can, the game gets harder once you get 1000points.
 
 
 
-<!-- About The Game -->
+#About The Game
 
 The reule of the game is very simple. The player just need to choose between color green and yellow and get as much points as they can get and players can compare their scores in the score board.
 
