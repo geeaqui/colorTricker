@@ -355,3 +355,32 @@ header h1{
 	margin-top: -200px;
 }
 
+#footIcon{
+	padding-top: 50px;
+	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#fff;
+}
+
+#footIcon .visit{
+	padding-bottom: 10px;
+}
+
+#foot a{
+	margin-top: 20px;
+}
+
+#gitIcon{
+   background-image: url('../images/githubBlack.svg');
+   background-size: cover;
+   height: 50px;
+   width: 50px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#gitIcon:hover {
+   background-image: url('../images/gitgray.png');
+}
+
+
