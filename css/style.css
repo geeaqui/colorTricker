@@ -80,17 +80,19 @@ header h1{
 #startBtn{
 	position: relative;
 	margin-top: 100px;
-	font-size:18px;
+	font-size:24px;
 	width:200px;
 	left:-100px;
+	font-family: 'Barrio', cursive;
 }
 
 #player2{
-	font-size:18px;
+	font-size:20px;
 	width:200px;
 	position: relative;
 	top:-105px;
 	right: -200px;
+	font-family: 'Barrio', cursive;
 }
 
 .myButton{
@@ -102,6 +104,7 @@ header h1{
 	text-transform: uppercase;
 	background-color: #42ffbc;
 	color:#fff;
+	font-family: 'Barrio', cursive;
 }
 
 /*********** Instruction Page ***********/
