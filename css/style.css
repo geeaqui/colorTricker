@@ -217,9 +217,14 @@ header h1{
 #answer p{
 	color:#36374f;;
 	font-weight: bold;
-	font-size: 68px;
+	font-size: 88px;
 	text-align: center;
-	padding-top: 50px;
+	padding-top: 20px;
+	font-family: 'Barrio', cursive;
+}
+
+#answer #textAns{
+	color:red;
 }
 
 #colors{

@@ -33,6 +33,7 @@ $(function(){
       	resetScore();
       	easy = 2;
       	imgMove();
+      	document.getElementById('readySound').play();
 	});
 
 	$('#back').click(function(){
@@ -43,6 +44,7 @@ $(function(){
 		resetScore();
 		clearImageInt()
 		$('#ready').remove();
+		document.getElementById('nextSound').play();
 	});
 
 
@@ -50,23 +52,26 @@ $(function(){
 	*Player 2 Button
 	*/
 	$('#player2').on('click', function(){
-		$('#front, #gamePage2').slideToggle();	
-      	//listenForKeyPress2();
+		$('#front, #gamePage2').slideToggle();
+		document.getElementById('nextSound').play();	
 	});
 
 	$('#back2').click(function(){
 		$('#front, #gamePage2').slideToggle();
+		document.getElementById('nextSound').play();
 	});
 
 	//instruction button
 	$('#intBtn').click(function(){
 		$('#front, #instrucPage').slideToggle();
 		console.log("instruction");
+		document.getElementById('nextSound').play();
 		
 	});
 
 	$('#mainMenu').click(function(){
 		$('#front, #instrucPage').slideToggle();
+		document.getElementById('nextSound').play();
 	});
 
 
@@ -80,11 +85,13 @@ $(function(){
 		//var rand = Math.floor(Math.random()*colorText.length);
 		$(document).one("keydown", function(event){
 			if(event.keyCode === 37){
+				document.getElementById('shushSound').play();
 				ans = "green";
 				stopColor();
 				stopTimer();
 				//easy = 3;
 			}else if(event.keyCode === 39){
+				document.getElementById('shushSound').play();
 				ans = "yellow";
 				stopColor();
 				stopTimer();
@@ -119,6 +126,7 @@ $(function(){
 		if(ansr !== color || easy === 0 ){
 			console.log(easy);
 			textAns.innerHTML = "";
+			document.getElementById('overSound').play();
 			para2.innerHTML = "Game Over!"	
 		}else if(ansr === color){
 			console.log("You are right");
