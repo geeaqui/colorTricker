@@ -360,6 +360,10 @@ header h1{
 	text-align: center;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color:#fff;
+	width:400px;
+	height:100px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #footIcon .visit{
@@ -371,7 +375,7 @@ header h1{
 }
 
 #gitIcon{
-   background-image: url('../images/githubBlack.svg');
+   background-image: url('../images/gitgray.png');
    background-size: cover;
    height: 50px;
    width: 50px;
@@ -380,7 +384,7 @@ header h1{
 }
 
 #gitIcon:hover {
-   background-image: url('../images/gitgray.png');
+   background-image: url('../images/githubBlack.svg');
 }
 
 
