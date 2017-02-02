@@ -16,10 +16,38 @@ header h1, .myButton, #instrucPage, #mainMenu, #back, #gameFooter p #answer p,
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.ow{
+	color:red;
+}
+
+.el{
+	color:green;
+}
+
+.ar{
+	color:orange;
+}
+
+.three{
+	color:#f95959;
+}
+
+.si{
+	color:#c10084;
+}
+
+.kay{
+	color:#ff6600;
+}
+
+
+
 header h1{
 	font-size: 48px;
-	color:#fff;
+	color:#5cf959;
 	padding:20px;
+	font-family: 'Barrio', cursive;
+	font-weight: bold;
 }
 
 #gameArea{
@@ -296,15 +324,14 @@ header h1{
 	font-size:120px;
 	top:-100px;
 	font-family: 'Barrio', cursive;
-	transition: 2s;
+	//transition: 2s;
 }
 
 #answer #gameOver{
 	position: relative;
 	font-size:120px;
-	top:-400px;
+	top:-50px;
 	font-family: 'Barrio', cursive;
-	transition: 2s;
 }
 
 /************** Footer *******************/

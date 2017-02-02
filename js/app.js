@@ -5,6 +5,7 @@ $(function(){
 	var answer = document.getElementById('answer');
 	var textAns = document.getElementById('textAns');
 	var scoreBoard = document.getElementById('colors2');
+	var para2 = document.getElementById('gameOver');
 	var colorText = ["GREEN","YELLOW","LEFT", "RIGHT"]
 	var colors = ["green", "yellow"];
 	var ans = "";
@@ -26,6 +27,7 @@ $(function(){
 		var para = document.createElement("p");
 		para.setAttribute("id", "ready")
 		para.innerHTML = "GET READY!";
+		para2.innerHTML = "";
 		answer.appendChild(para);	
       	listenForKeyPress();
       	resetScore();
@@ -39,8 +41,8 @@ $(function(){
 		li.innerHTML = "player " + (index++) + " score: "+ score;
 		colors2.appendChild(li);
 		resetScore();
+		clearImageInt()
 		$('#ready').remove();
-		$('#gameOver').remove();
 	});
 
 
@@ -113,18 +115,12 @@ $(function(){
 	//compare answer
 	function compareAnswer(ansr, color){
 		var spanScore = document.getElementById('spanScore');
-		var para2 = document.createElement("p");
-		para2.setAttribute("id", "gameOver")
 		console.log(easy);
 		if(ansr !== color || easy === 0 ){
 			console.log(easy);
-			//console.log("Game over");
-			para2.innerHTML = "Game Over!"
-			answer.appendChild(para2);
-			//$(answer).css('display','none');
-			//alert("game over");	
+			textAns.innerHTML = "";
+			para2.innerHTML = "Game Over!"	
 		}else if(ansr === color){
-			//console.log(easy);
 			console.log("You are right");
 			score +=100;
 
@@ -239,7 +235,7 @@ $(function(){
 	}
 
 	function moveImage(){
-		$('#ready').animate({top:"-800px"});
+		$('#ready').animate({top:"-800px"}, 2000);
 	}
 
 	function clearImageInt(){
