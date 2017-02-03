@@ -165,6 +165,7 @@ $(function(){
   			colorId2 = setInterval(change, 10);
   		}
 
+  		// clear the interval of the animation of the timer
   		function change() {
     		if (width == 100) {
       			clearInterval(colorId );
@@ -216,9 +217,7 @@ $(function(){
 		if(score >= 1100){
 			var rand = Math.floor(Math.random()*colorText.length);
 			textAns.innerHTML = colorText[rand];
-		}else if(score >=1000){
-			$('#answer').animate({opacity:"1"});
-		}
+		 }
 	}
 
 	
@@ -254,6 +253,7 @@ $(function(){
 	//add ready box that slides up within 3 sec before the game start
 
 	//add a ready sound whenever start button is
+
 });
 
 
