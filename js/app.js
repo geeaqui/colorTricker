@@ -14,13 +14,14 @@ $(function(){
 	/*************** GLOBAL VARIABALES *************/
 	var ans = "";
 	var colorInterval;
-	var easy = 2;
 	var clockEnd;
 	var colorId;
 	var colorId2;
+	var imageMove;
 	var score = 0;
 	var index = 1;
-	var imageMove ;
+	var easy = 2;
+	
 
 	/** 
 	* Player 1 Button
@@ -131,8 +132,8 @@ $(function(){
 
 		if(ansr !== color || easy === 0 ){
 			console.log(easy);
-			textAns.innerHTML = "";
 			document.getElementById('overSound').play();
+			$('#textAns').html("");
 			para2.innerHTML = "Game Over!"
 
 		}else if(ansr === color){

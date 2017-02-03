@@ -17,10 +17,10 @@ Get as much score as you can, the game gets harder once you get 1000points.
 
 #About The Game
 
-The reule of the game is very simple. The player just need to choose between color green and yellow and get as much points as they can get and players can compare their scores in the score board.
+The rule of the game is very simple. The player must choose between colors on the screen and get as much points as they can get, also players can compare their scores in the score board.
 
-I made this individual project for 4 days timespan as part of my training with SpartaGlobal. I used my knowledge of HTML, CSS, JavaScript&JQuery to build this program.
+I made this individual project in the 4 days timespan as part of my training with SpartaGlobal. to build this project, I used my knowledge in HTML, CSS, JavaScript&JQuery.
 
-As this is my very first time to do a game project and also because I am only beginning to learn javascript, I decided to make a very simple concept for the game.
+Please note: As this is my very first time to do a game project and also because I am only beginning to learn javascript, I decided to make a very simple concept for the game.
 
 Thank you and have fun playing :) .
