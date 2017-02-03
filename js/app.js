@@ -2,14 +2,17 @@ $(function(){
 	/**
 	* VARIABLES
 	*/
+
+	/*********** GET ELEMENTS OF HTML ************/
 	var answer = document.getElementById('answer');
 	var textAns = document.getElementById('textAns');
 	var scoreBoard = document.getElementById('colors2');
 	var para2 = document.getElementById('gameOver');
+	/******************* ARRAY  *******************/
 	var colorText = ["GREEN","YELLOW","LEFT", "RIGHT"]
 	var colors = ["green", "yellow"];
+	/*************** GLOBAL VARIABALES *************/
 	var ans = "";
-	var score = 0;
 	var colorInterval;
 	var easy = 2;
 	var clockEnd;
@@ -83,17 +86,20 @@ $(function(){
 	function listenForKeyPress(){
 		var color = getColor();
 		$(document).one("keydown", function(event){
+
 			if(event.keyCode === 37){
 				document.getElementById('shushSound').play();
 				ans = "green";
 				stopColor();
 				stopTimer();
+
 			}else if(event.keyCode === 39){
 				document.getElementById('shushSound').play();
 				ans = "yellow";
 				stopColor();
 				stopTimer();
 			}
+
 			hardMode();
 			compareAnswer(ans, color);
 		});
@@ -122,11 +128,13 @@ $(function(){
 	function compareAnswer(ansr, color){
 		var spanScore = document.getElementById('spanScore');
 		console.log(easy);
+
 		if(ansr !== color || easy === 0 ){
 			console.log(easy);
 			textAns.innerHTML = "";
 			document.getElementById('overSound').play();
-			para2.innerHTML = "Game Over!"	
+			para2.innerHTML = "Game Over!"
+
 		}else if(ansr === color){
 			console.log("You are right");
 			score +=100;
