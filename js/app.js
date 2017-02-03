@@ -100,8 +100,8 @@ $(function(){
 				stopTimer();
 			}
 
-			hardMode();
 			compareAnswer(ans, color);
+			hardMode();
 		});
 	}
 
