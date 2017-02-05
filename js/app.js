@@ -3,7 +3,7 @@ $(function(){
 	* VARIABLES
 	*/
 
-	/*********** GET ELEMENTS OF HTML ************/
+	/*********** GET ELEMENTS OF HTML ID's************/
 	var answer = document.getElementById('answer');
 	var textAns = document.getElementById('textAns');
 	var scoreBoard = document.getElementById('colors2');
@@ -45,8 +45,9 @@ $(function(){
 		var li = document.createElement("li");
 		li.innerHTML = "player " + (index++) + " score: "+ score;
 		colors2.appendChild(li);
+		$('#textAns').html("");
 		resetScore();
-		clearImageInt()
+		clearImageInt();
 		$('#ready').remove();
 		document.getElementById('nextSound').play();
 	});
@@ -101,8 +102,9 @@ $(function(){
 				stopTimer();
 			}
 
-			compareAnswer(ans, color);
+			// compareAnswer(ans, color);
 			hardMode();
+			compareAnswer(ans, color);
 		});
 	}
 
@@ -133,8 +135,9 @@ $(function(){
 		if(ansr !== color || easy === 0 ){
 			console.log(easy);
 			document.getElementById('overSound').play();
-			$('#textAns').html("");
 			para2.innerHTML = "Game Over!"
+			console.log("empty");
+			textAns.innerHTML = "";
 
 		}else if(ansr === color){
 			console.log("You are right");
